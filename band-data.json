@@ -1,0 +1,45 @@
+{
+  "bandName": "Cries Of Redemption",
+  "tagline": "Music first. Music only. Zero gimmicks.",
+  "location": "Bloomingdale, GA, US · Rock",
+  "bio": "Founded in 2007 by guitarist and songwriter Ed Silva, Cries of Redemption creates honest, cinematic modern rock for the castaways, the misfits, and the broken.",
+  "avatar": "assets/images/logo.jpg",
+  "album": {
+    "title": "A Collection of Singles",
+    "subtitle": "27 songs",
+    "cover": "assets/images/album-cover.jpg"
+  },
+  "songs": [
+    {
+      "title": "An Eerie Feeling",
+      "duration": "2:59",
+      "file": "assets/audio/an-eerie-feeling.wav"
+    },
+    {
+      "title": "Behind The Mask",
+      "duration": "4:20",
+      "file": "assets/audio/behind-the-mask.mp3"
+    },
+    {
+      "title": "This Is What It Feels Like",
+      "duration": "4:13",
+      "file": "assets/audio/this-is-what-it-feels-like.mp3"
+    },
+    {
+      "title": "What Lies Beneath - Radio Mix",
+      "duration": "4:10",
+      "file": "assets/audio/what-lies-beneath.mp3"
+    },
+    {
+      "title": "Tempting Fate",
+      "duration": "3:43",
+      "file": "assets/audio/tempting-fate.mp3"
+    }
+  ],
+  "photos": [
+    "assets/images/photo1.jpg",
+    "assets/images/photo2.jpg",
+    "assets/images/photo3.jpg",
+    "assets/images/photo4.jpg"
+  ]
+}

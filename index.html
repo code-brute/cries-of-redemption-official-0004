@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cries Of Redemption</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page-container">
+    <!-- Header / Bio -->
+    <header class="band-header">
+      <img id="band-avatar" src="" alt="Band Logo" class="avatar">
+      <h1 id="band-name"></h1>
+      <p id="band-tagline" class="tagline"></p>
+      <div id="band-location" class="location-badge"></div>
+      <p id="band-bio" class="bio"></p>
+    </header>
+
+    <!-- Songs -->
+    <section class="content-section">
+      <h2>Songs</h2>
+      <div id="song-list" class="song-list"></div>
+    </section>
+
+    <!-- Albums -->
+    <section class="content-section">
+      <h2>Albums</h2>
+      <div class="album-card">
+        <img id="album-cover" src="" alt="Album Artwork" class="album-art">
+        <div class="album-info">
+          <div id="album-title" class="album-title"></div>
+          <div id="album-subtitle" class="album-sub"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photos -->
+    <section class="content-section">
+      <h2>Photos</h2>
+      <div id="photo-grid" class="photo-grid"></div>
+    </section>
+  </main>
+
+  <!-- Persistent Player Bar -->
+  <aside class="now-playing-bar">
+    <div id="now-playing-title">Select a track to play</div>
+    <audio id="audio-player" controls></audio>
+  </aside>
+
+  <script src="player.js"></script>
+</body>
+</html>
