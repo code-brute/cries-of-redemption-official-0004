@@ -16,24 +16,24 @@
       "file": "assets/audio/an-eerie-feeling.wav"
     },
     {
-      "title": "Behind The Mask",
-      "duration": "4:20",
-      "file": "assets/audio/behind-the-mask.mp3"
+      "title": "Angel",
+      "duration": "5:04",
+      "file": "assets/audio/angel.wav"
     },
     {
       "title": "This Is What It Feels Like",
       "duration": "4:13",
-      "file": "assets/audio/this-is-what-it-feels-like.mp3"
+      "file": "assets/audio/this-is-what.wav"
     },
     {
-      "title": "What Lies Beneath - Radio Mix",
-      "duration": "4:10",
+      "title": "What Lies Beneath",
+      "duration": "4:14",
       "file": "assets/audio/what-lies-beneath.mp3"
     },
     {
-      "title": "Tempting Fate",
-      "duration": "3:43",
-      "file": "assets/audio/tempting-fate.mp3"
+      "title": "Impulse",
+      "duration": "4:22",
+      "file": "assets/audio/impulse.wav"
     }
   ],
   "photos": [
