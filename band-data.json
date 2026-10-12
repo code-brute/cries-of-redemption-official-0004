@@ -10,10 +10,25 @@
     "cover": "assets/images/album-cover.jpg"
   },
   "songs": [
+           {
+      "title": "Behind The Mask",
+      "duration": "4:22",
+      "file": "assets/audio/behind-the-mask.mp3"
+    },
     {
       "title": "An Eerie Feeling",
       "duration": "3:59",
       "file": "assets/audio/an-eerie-feeling.wav"
+    },
+        {
+      "title": "This Is What It Feels Like",
+      "duration": "4:13",
+      "file": "assets/audio/this-is-what.wav"
+    },
+        {
+      "title": "Tempting Fate",
+      "duration": "4:13",
+      "file": "assets/audio/tempting-fate.mp3"
     },
     {
       "title": "Angel",
@@ -21,9 +36,9 @@
       "file": "assets/audio/angel.wav"
     },
     {
-      "title": "This Is What It Feels Like",
+      "title": "Show Me",
       "duration": "4:13",
-      "file": "assets/audio/this-is-what.wav"
+      "file": "assets/audio/show-me.mp3"
     },
     {
       "title": "What Lies Beneath",
@@ -34,6 +49,11 @@
       "title": "Impulse",
       "duration": "4:22",
       "file": "assets/audio/impulse.wav"
+    },
+        {
+      "title": "Not The Same",
+      "duration": "4:22",
+      "file": "assets/audio/not-the-same.mp3"
     }
   ],
   "photos": [
