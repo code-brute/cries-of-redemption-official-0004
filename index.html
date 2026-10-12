@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cries Of Redemption</title>
+  
+  <!-- Correct root-level favicon tags -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
@@ -13,7 +20,6 @@
 
   <main class="container is-max-desktop pb-6 mb-6">
     
-    <!-- Sticky Header Container -->
     <header class="has-text-centered sticky-header">
       <figure class="image is-128x128 is-inline-block mb-3">
         <img id="band-avatar" src="" alt="Band Logo" class="is-rounded custom-avatar">
@@ -24,15 +30,12 @@
       <p id="band-bio" class="content has-text-grey-light mx-auto mb-0" style="max-width: 600px;"></p>
     </header>
 
-    <!-- Scrollable Content Wrapper -->
     <div class="px-5">
-      <!-- Songs -->
       <section class="section pt-4 px-0">
         <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Songs</h2>
         <div id="song-list" class="is-flex is-flex-direction-column" style="gap: 8px;"></div>
       </section>
 
-      <!-- Albums -->
       <section class="section pt-0 px-0">
         <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Albums</h2>
         <div class="box is-flex is-align-items-center has-background-black-bis custom-border" style="gap: 16px;">
@@ -46,7 +49,6 @@
         </div>
       </section>
 
-      <!-- Photos -->
       <section class="section pt-0 px-0 mb-6">
         <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Photos</h2>
         <div id="photo-grid"></div>
@@ -54,7 +56,6 @@
     </div>
   </main>
 
-  <!-- Persistent Player Bar -->
   <aside class="now-playing-bar has-background-black-bis custom-border-top">
     <div class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between" style="gap: 24px; width: 100%;">
       <div id="now-playing-title" class="is-size-6 has-text-weight-semibold has-text-white is-flex-shrink-0" style="white-space: nowrap;">Select a track to play</div>
