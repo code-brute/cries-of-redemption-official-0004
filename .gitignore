@@ -1,0 +1,16 @@
+# Sensitive environment files
+.env
+.env.*
+
+# Local admin tool & backend server
+admin/
+admin.css
+admin.html
+admin.js
+server.js
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+node_modules/
+npm-debug.log*
