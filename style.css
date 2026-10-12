@@ -14,7 +14,7 @@ body {
 }
 .audio-player-style {
   width: 100%;
-  opacity: .8;
+  opacity: 0.8;
 }
 .page-container {
   width: 100%;
@@ -164,10 +164,17 @@ h1 {
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /*   justify-content: space-between; */
+  gap: 16px;
 }
 #now-playing-title {
-  width: auto;
   font-size: 0.9rem;
   color: #ddd;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.audio-player-style {
+  flex: 1;             /* Takes up all remaining horizontal space */
+  min-width: 0;        /* Allows the player to shrink smoothly */
+  opacity: 0.8;
 }
