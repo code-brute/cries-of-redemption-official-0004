@@ -54,6 +54,11 @@
       "title": "Not The Same",
       "duration": "4:22",
       "file": "assets/audio/not-the-same.mp3"
+    },
+      {
+      "title": "Torn",
+      "duration": "4:22",
+      "file": "assets/audio/torn.wav"
     }
   ],
   "photos": [
