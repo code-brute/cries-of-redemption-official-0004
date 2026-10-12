@@ -1,54 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cries Of Redemption</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="has-background-black">
 
-  <main class="page-container">
-    <!-- Header / Bio -->
-    <header class="band-header">
-      <img id="band-avatar" src="" alt="Band Logo" class="avatar">
-      <h1 id="band-name"></h1>
-      <p id="band-tagline" class="tagline"></p>
-      <div id="band-location" class="location-badge"></div>
-      <p id="band-bio" class="bio"></p>
+  <main class="container is-max-desktop pb-6 mb-6">
+    
+    <!-- Sticky Header Container -->
+    <header class="has-text-centered sticky-header">
+      <figure class="image is-128x128 is-inline-block mb-3">
+        <img id="band-avatar" src="" alt="Band Logo" class="is-rounded custom-avatar">
+      </figure>
+      <h1 id="band-name" class="title is-2 mb-2" style="letter-spacing: 1px;"></h1>
+      <p id="band-tagline" class="subtitle is-6 is-uppercase has-text-grey mb-3"></p>
+      <div id="band-location" class="tag is-dark is-rounded mb-4 custom-border"></div>
+      <p id="band-bio" class="content has-text-grey-light mx-auto mb-0" style="max-width: 600px;"></p>
     </header>
 
-    <!-- Songs -->
-    <section class="content-section">
-      <h2>Songs</h2>
-      <div id="song-list" class="song-list"></div>
-    </section>
+    <!-- Scrollable Content Wrapper -->
+    <div class="px-5">
+      <!-- Songs -->
+      <section class="section pt-4 px-0">
+        <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Songs</h2>
+        <div id="song-list" class="is-flex is-flex-direction-column" style="gap: 8px;"></div>
+      </section>
 
-    <!-- Albums -->
-    <section class="content-section">
-      <h2>Albums</h2>
-      <div class="album-card">
-        <img id="album-cover" src="" alt="Album Artwork" class="album-art">
-        <div class="album-info">
-          <div id="album-title" class="album-title"></div>
-          <div id="album-subtitle" class="album-sub"></div>
+      <!-- Albums -->
+      <section class="section pt-0 px-0">
+        <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Albums</h2>
+        <div class="box is-flex is-align-items-center has-background-black-bis custom-border" style="gap: 16px;">
+          <figure class="image is-96x96 m-0">
+            <img id="album-cover" src="" alt="Album Artwork" class="is-rounded" style="object-fit: cover;">
+          </figure>
+          <div>
+            <div id="album-title" class="title is-6 mb-1"></div>
+            <div id="album-subtitle" class="subtitle is-7 has-text-grey"></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Photos -->
-    <section class="content-section">
-      <h2>Photos</h2>
-      <div id="photo-grid" class="photo-grid"></div>
-    </section>
+      <!-- Photos -->
+      <section class="section pt-0 px-0 mb-6">
+        <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Photos</h2>
+        <div id="photo-grid"></div>
+      </section>
+    </div>
   </main>
 
   <!-- Persistent Player Bar -->
-  <aside class="now-playing-bar">
-    <div id="now-playing-title" class="select-track">Select a track to play</div>
-    <audio id="audio-player" class="audio-player-style" controls controlsist ="nodownload"></audio>
+  <aside class="now-playing-bar has-background-black-bis custom-border-top">
+    <div class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between" style="gap: 24px; width: 100%;">
+      <div id="now-playing-title" class="is-size-6 has-text-weight-semibold has-text-white is-flex-shrink-0" style="white-space: nowrap;">Select a track to play</div>
+      <div class="is-flex-grow-1">
+        <audio id="audio-player" controls controlsList="nodownload"></audio>
+      </div>
+    </div>
   </aside>
 
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <script>
+    const player = new Plyr('#audio-player', {
+      controls: ['play', 'progress', 'current-time', 'mute', 'volume']
+    });
+  </script>
   <script src="player.js"></script>
 </body>
 </html>

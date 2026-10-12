@@ -1,4 +1,3 @@
-// Fetch the JSON and populate the site
 fetch('band-data.json')
   .then(res => res.json())
   .then(data => {
@@ -31,8 +30,16 @@ fetch('band-data.json')
     data.songs.forEach((song, index) => {
       const row = document.createElement('div');
       row.className = 'song-row';
+      
+      // Fixed-width track-index-container prevents titles from shifting during hover
       row.innerHTML = `
-        <span class="song-title">${index + 1}. ${song.title}</span>
+        <div class="song-info">
+          <div class="track-index-container">
+            <span class="track-number">${index + 1}</span>
+            <i class="fa-solid fa-play play-icon"></i>
+          </div>
+          <span class="song-title">${song.title}</span>
+        </div>
         <span class="song-duration">${song.duration}</span>
       `;
 
