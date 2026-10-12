@@ -12,7 +12,10 @@ body {
   justify-content: center;
   padding: 40px 16px 120px 16px;
 }
-
+.audio-player-style {
+  width: 100%;
+  opacity: .8;
+}
 .page-container {
   width: 100%;
   max-width: 680px;
@@ -147,7 +150,7 @@ h1 {
 }
 .photo-thumb:hover {
   transform: scale(1.08);
-  opacity: .4;
+  opacity: 0.4;
 }
 
 /* Bottom Bar */
@@ -164,6 +167,7 @@ h1 {
   justify-content: space-between;
 }
 #now-playing-title {
+  width: auto;
   font-size: 0.9rem;
   color: #ddd;
 }
