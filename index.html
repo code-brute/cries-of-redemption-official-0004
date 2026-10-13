@@ -326,7 +326,7 @@
       </footer>
     </main>
 
-    <aside class="now-playing-bar has-background-black-bis custom-border-top">
+   <!--  <aside class="now-playing-bar has-background-black-bis custom-border-top">
       <div
         class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between"
         style="gap: 24px; width: 100%"
@@ -342,7 +342,20 @@
           <audio id="audio-player" controls controlsList="nodownload"></audio>
         </div>
       </div>
-    </aside>
+    </aside> -->
+
+    <aside class="now-playing-bar has-background-black-bis custom-border-top">
+  <div class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between" style="gap: 12px; width: 100%;">
+    <!-- Removed is-flex-shrink-0. Added max-width, overflow: hidden, and text-overflow: ellipsis -->
+    <div id="now-playing-title" class="is-size-7-mobile is-size-6-tablet has-text-weight-semibold has-text-white" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 35%;">
+      Select a track to play
+    </div>
+    <!-- Added min-width: 0 to prevent the flex-child from overflowing -->
+    <div class="is-flex-grow-1" style="min-width: 0;">
+      <audio id="audio-player" controls controlsList="nodownload"></audio>
+    </div>
+  </div>
+</aside>
 
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script>
