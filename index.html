@@ -137,7 +137,12 @@
             class="navbar-item has-text-grey-light px-3 nav-trigger"
             >Press</a
           >
-                    <a
+          <a
+            href="#blog"
+            class="navbar-item has-text-grey-light px-3 nav-trigger"
+            >Blog</a
+          >
+          <a
             href="#bio"
             class="navbar-item has-text-grey-light px-3 nav-trigger"
             >Bio</a
@@ -291,6 +296,20 @@
           style="gap: 16px"
         ></div>
       </section>
+      <section
+        id="blog"
+        class="section pt-6 px-5 view-section is-hidden"
+        style="min-height: 80vh"
+      >
+        <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">
+          The COR Chronicle
+        </h2>
+        <div
+          id="blog-list"
+          class="is-flex is-flex-direction-column"
+          style="gap: 40px"
+        ></div>
+      </section>
       <footer class="section px-5 pt-6 pb-6 has-text-centered">
         <div class="is-flex is-justify-content-center mb-4" style="gap: 24px">
           <!-- Replace the # with your actual profile URLs -->
@@ -326,7 +345,7 @@
       </footer>
     </main>
 
-   <!--  <aside class="now-playing-bar has-background-black-bis custom-border-top">
+    <!--  <aside class="now-playing-bar has-background-black-bis custom-border-top">
       <div
         class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between"
         style="gap: 24px; width: 100%"
@@ -345,17 +364,29 @@
     </aside> -->
 
     <aside class="now-playing-bar has-background-black-bis custom-border-top">
-  <div class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between" style="gap: 12px; width: 100%;">
-    <!-- Removed is-flex-shrink-0. Added max-width, overflow: hidden, and text-overflow: ellipsis -->
-    <div id="now-playing-title" class="is-size-7-mobile is-size-6-tablet has-text-weight-semibold has-text-white" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 35%;">
-      Select a track to play
-    </div>
-    <!-- Added min-width: 0 to prevent the flex-child from overflowing -->
-    <div class="is-flex-grow-1" style="min-width: 0;">
-      <audio id="audio-player" controls controlsList="nodownload"></audio>
-    </div>
-  </div>
-</aside>
+      <div
+        class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between"
+        style="gap: 12px; width: 100%"
+      >
+        <!-- Removed is-flex-shrink-0. Added max-width, overflow: hidden, and text-overflow: ellipsis -->
+        <div
+          id="now-playing-title"
+          class="is-size-7-mobile is-size-6-tablet has-text-weight-semibold has-text-white"
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 35%;
+          "
+        >
+          Select a track to play
+        </div>
+        <!-- Added min-width: 0 to prevent the flex-child from overflowing -->
+        <div class="is-flex-grow-1" style="min-width: 0">
+          <audio id="audio-player" controls controlsList="nodownload"></audio>
+        </div>
+      </div>
+    </aside>
 
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script>

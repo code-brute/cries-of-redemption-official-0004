@@ -228,3 +228,48 @@ body {
 .transition-color:hover {
   color: #fff !important;
 }
+
+/* The COR Chronicle Editorial Styling */
+.blog-article {
+  max-width: 720px; /* Constrains line length for optimal reading */
+  margin: 0 auto;   /* Centers the article */
+  border-bottom: 1px solid #1c1c1c;
+  padding-bottom: 40px;
+}
+
+.blog-article:last-child {
+  border-bottom: none;
+}
+
+.blog-header {
+  font-family: "Georgia", "Times New Roman", serif; /* The "Chronicle" aesthetic */
+  font-size: 2.2rem;
+  color: #eaeaea;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.blog-date {
+  color: #888;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.blog-image {
+  border-radius: 6px;
+  border: 1px solid #222;
+  max-width: 70%; /* Adjust this percentage to make it exactly the size you want */
+  margin: 0 auto 24px auto; /* This keeps it perfectly centered */
+  display: block;
+  height: auto;
+  object-fit: cover;
+}
+
+.blog-body p {
+  font-size: 1.1rem;
+  color: #bbb;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}

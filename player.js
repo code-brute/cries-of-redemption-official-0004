@@ -53,7 +53,7 @@ fetch('band-data.json')
   })
   .catch(err => console.error("Error loading band data:", err));
 
-// --- Single Page App Navigation Logic ---
+/* // --- Single Page App Navigation Logic ---
 const navLinks = document.querySelectorAll('.nav-trigger');
 const views = document.querySelectorAll('.view-section');
 
@@ -75,6 +75,44 @@ navLinks.forEach(link => {
     // 3. Reset scroll position cleanly to the top
     window.scrollTo(0, 0);
   });
+}); */
+
+// --- Single Page App Navigation Logic ---
+const navLinks = document.querySelectorAll('.nav-trigger');
+const views = document.querySelectorAll('.view-section');
+
+// 1. Create a reusable function to swap the views
+function switchView(targetId) {
+  views.forEach(view => view.classList.add('is-hidden'));
+  const targetView = document.getElementById(targetId);
+  if (targetView) {
+    targetView.classList.remove('is-hidden');
+  }
+  window.scrollTo(0, 0);
+}
+
+// 2. Handle Navigation Clicks
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); 
+    
+    const targetHref = this.getAttribute('href');
+    const targetId = targetHref.substring(1);
+    
+    // Push the new #hash to the URL bar silently
+    history.pushState(null, null, targetHref);
+    
+    switchView(targetId);
+  });
+});
+
+// 3. Handle Initial Page Load (Direct Links)
+// If a fan clicks a shared link like criesofredemptionmusic.com/#press, this catches it
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.hash) {
+    const targetId = window.location.hash.substring(1);
+    switchView(targetId);
+  }
 });
 
 /* fetch('press-data.json')
@@ -174,3 +212,32 @@ document.querySelectorAll('.nav-trigger').forEach(link => {
     }
   });
 });
+
+fetch('blog-data.json')
+  .then(res => res.json())
+  .then(posts => {
+    const blogContainer = document.getElementById('blog-list');
+    
+    posts.forEach(post => {
+      const article = document.createElement('article');
+      article.className = 'blog-article';
+      
+      // Safely load an image only if the JSON includes one
+      const imgHTML = post.image ? `<img src="${post.image}" alt="${post.title}" class="blog-image">` : '';
+      
+      // Convert the array of strings into a series of <p> tags
+      const paragraphsHTML = post.content.map(paragraph => `<p>${paragraph}</p>`).join('');
+      
+      article.innerHTML = `
+        <h3 class="blog-header">${post.title}</h3>
+        <div class="blog-date">${post.date}</div>
+        ${imgHTML}
+        <div class="blog-body">
+          ${paragraphsHTML}
+        </div>
+      `;
+      
+      blogContainer.appendChild(article);
+    });
+  })
+  .catch(err => console.error("Error loading blog data:", err));
