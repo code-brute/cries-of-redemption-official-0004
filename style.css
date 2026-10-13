@@ -37,7 +37,7 @@ body {
   height: 100vh;
   background: url('assets/images/logo.jpg') center center no-repeat;
   background-size: cover;
-  opacity: 0.55;
+  opacity: 0.60;
   z-index: -1; 
   pointer-events: none;
 }
