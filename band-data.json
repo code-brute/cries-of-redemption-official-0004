@@ -10,7 +10,7 @@
     "cover": "assets/images/album-cover.jpg"
   },
   "songs": [
-           {
+    {
       "title": "Behind The Mask (feat. Sela Hafoka-Hauser)",
       "duration": "4:30",
       "file": "assets/audio/behind-the-mask.mp3"
@@ -20,12 +20,12 @@
       "duration": "3:59",
       "file": "assets/audio/an-eerie-feeling.wav"
     },
-        {
+    {
       "title": "This Is What It Feels Like (feat. Maria Duque)",
       "duration": "4:10",
       "file": "assets/audio/this-is-what.wav"
     },
-        {
+    {
       "title": "Tempting Fate (feat. Sela Hafoka-Hauser)",
       "duration": "3:40",
       "file": "assets/audio/tempting-fate.mp3"
@@ -50,12 +50,12 @@
       "duration": "4:22",
       "file": "assets/audio/impulse.wav"
     },
-        {
+    {
       "title": "Not The Same (feat. Sela Hafoka-Hauser)",
       "duration": "4:06",
       "file": "assets/audio/not-the-same.mp3"
     },
-      {
+    {
       "title": "Torn (feat. Maria Duque)",
       "duration": "3:04",
       "file": "assets/audio/torn.wav"
