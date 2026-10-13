@@ -170,3 +170,10 @@ body {
 .title{
     border: none
 }
+.transition-color {
+  transition: color 0.2s ease;
+}
+
+.transition-color:hover {
+  color: #fff !important;
+}

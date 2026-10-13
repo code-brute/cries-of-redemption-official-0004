@@ -86,38 +86,83 @@
     </script>
   </head>
   <body class="has-background-black has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top has-background-black-bis custom-border-bottom" role="navigation">
-  <div class="navbar-brand">
-    <!-- The Hamburger Icon -->
-    <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false" data-target="mainNav">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+    <nav
+      class="navbar is-fixed-top has-background-black-bis custom-border-bottom"
+      role="navigation"
+    >
+      <div class="navbar-brand">
+        <!-- The Hamburger Icon -->
+        <a
+          role="button"
+          class="navbar-burger has-text-white"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="mainNav"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-  <div id="mainNav" class="navbar-menu has-background-black-bis py-2" style="box-shadow: none;">
-    <div class="navbar-start is-flex-grow-1 is-justify-content-center">
-      <a href="#home" class="navbar-item has-text-grey-light px-3 nav-trigger">Home</a>
-      <a href="#bio" class="navbar-item has-text-grey-light px-3 nav-trigger">Bio</a>
-      <a href="#music" class="navbar-item has-text-grey-light px-3 nav-trigger">Music</a>
-      <a href="#videos" class="navbar-item has-text-grey-light px-3 nav-trigger">Videos</a>
-      <a href="#photos" class="navbar-item has-text-grey-light px-3 nav-trigger">Photos</a>
-      <a href="#press" class="navbar-item has-text-grey-light px-3 nav-trigger">Press</a>
-      
-      <div class="navbar-item px-3">
-        <div class="field has-addons mb-0">
-          <div class="control">
-            <input class="input is-small is-rounded has-background-black has-text-white custom-border" type="email" placeholder="Join mailing list">
-          </div>
-          <div class="control">
-            <button class="button is-small is-dark is-rounded custom-border">Subscribe</button>
+      <div
+        id="mainNav"
+        class="navbar-menu has-background-black-bis py-2"
+        style="box-shadow: none"
+      >
+        <div class="navbar-start is-flex-grow-1 is-justify-content-center">
+          <a
+            href="#home"
+            class="navbar-item has-text-grey-light px-3 nav-trigger"
+            >Home</a
+          >
+          <a
+            href="#bio"
+            class="navbar-item has-text-grey-light px-3 nav-trigger"
+            >Bio</a
+          >
+          <a
+            href="#music"
+            class="navbar-item has-text-grey-light px-3 nav-trigger"
+            >Music</a
+          >
+          <a
+            href="#videos"
+            class="navbar-item has-text-grey-light px-3 nav-trigger"
+            >Videos</a
+          >
+          <a
+            href="#photos"
+            class="navbar-item has-text-grey-light px-3 nav-trigger"
+            >Photos</a
+          >
+          <a
+            href="#press"
+            class="navbar-item has-text-grey-light px-3 nav-trigger"
+            >Press</a
+          >
+
+          <div class="navbar-item px-3">
+            <div class="field has-addons mb-0">
+              <div class="control">
+                <input
+                  class="input is-small is-rounded has-background-black has-text-white custom-border"
+                  type="email"
+                  placeholder="Join mailing list"
+                />
+              </div>
+              <div class="control">
+                <button
+                  class="button is-small is-dark is-rounded custom-border"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
     <!-- HOME VIEW: Visible by default -->
     <section
@@ -245,6 +290,39 @@
           style="gap: 16px"
         ></div>
       </section>
+      <footer class="section px-5 pt-6 pb-6 has-text-centered">
+        <div class="is-flex is-justify-content-center mb-4" style="gap: 24px">
+          <!-- Replace the # with your actual profile URLs -->
+          <a
+            href="https://music.apple.com/mx/artist/cries-of-redemption/1861029646"
+            target="_blank"
+            class="has-text-grey-light is-size-4 transition-color"
+            aria-label="Apple Music"
+            ><i class="fa-brands fa-apple"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UCsKAfePRMUAsAAf3Z0w4PMw"
+            target="_blank"
+            class="has-text-grey-light is-size-4 transition-color"
+            aria-label="YouTube Music"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a
+            href="https://criesofredemption.bandcamp.com/album/cries-of-redemption"
+            target="_blank"
+            class="has-text-grey-light is-size-4 transition-color"
+            aria-label="Bandcamp"
+            ><i class="fa-brands fa-bandcamp"></i
+          ></a>
+        </div>
+
+        <p class="is-size-7 has-text-grey mb-1">
+          powered by: Silva Digital Footprint
+        </p>
+        <p class="is-size-7 has-text-grey">
+          &copy; 2007 - 2026 Cries of Redemption. All Rights Reserved.
+        </p>
+      </footer>
     </main>
 
     <aside class="now-playing-bar has-background-black-bis custom-border-top">
