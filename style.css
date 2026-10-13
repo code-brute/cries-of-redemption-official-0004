@@ -48,6 +48,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   width: 100%;
+  border: none;
 }
 
 @media (max-width: 768px) {
@@ -165,4 +166,7 @@ body {
 .press-article:hover {
   background-color: #111 !important;
   border-left-color: #fff;
+}
+.title{
+    border: none
 }

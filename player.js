@@ -98,3 +98,26 @@ fetch('press-data.json')
     });
   })
   .catch(err => console.error("Error loading press data:", err));
+
+  fetch('videos-data.json')
+  .then(res => res.json())
+  .then(videos => {
+    const videoContainer = document.getElementById('video-grid');
+    
+    videos.forEach(video => {
+      // Create a column that takes up half the screen on desktop, full width on mobile
+      const col = document.createElement('div');
+      col.className = 'column is-half'; 
+      
+      // We inject the YouTube ID directly into the embed URL. 
+      // loading="lazy" is critical here so the page doesn't slow down.
+      col.innerHTML = `
+        <figure class="image is-16by9 custom-border">
+          <iframe class="has-ratio" src="https://www.youtube.com/embed/${video.id}" title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </figure>
+      `;
+      
+      videoContainer.appendChild(col);
+    });
+  })
+  .catch(err => console.error("Error loading video data:", err));

@@ -105,6 +105,11 @@
           >Music</a
         >
         <a
+          href="#videos"
+          class="navbar-item has-text-grey-light px-3 nav-trigger"
+          >Videos</a
+        >
+        <a
           href="#press"
           class="navbar-item has-text-grey-light px-3 nav-trigger"
           >Press</a
@@ -226,7 +231,17 @@
           </div>
         </section>
       </div>
-
+      <section
+        id="videos"
+        class="section pt-6 px-5 view-section is-hidden"
+        style="min-height: 80vh"
+      >
+        <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">
+          Videos
+        </h2>
+        <!-- Bulma's column grid will automatically stack these on mobile and sit side-by-side on desktop -->
+        <div id="video-grid" class="columns is-multiline"></div>
+      </section>
       <!-- PHOTOS VIEW: Hidden by default -->
       <section
         id="photos"
