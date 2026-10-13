@@ -157,6 +157,7 @@ body {
   padding: 12px 20px;
   z-index: 40; 
 }
+/* }
 .press-article {
   transition: all 0.2s ease;
   border-left: 4px solid #555;
@@ -166,6 +167,56 @@ body {
 .press-article:hover {
   background-color: #111 !important;
   border-left-color: #fff;
+} */
+ /* Modern Editorial Press Card */
+.press-quote-card {
+  background-color: #0a0a0a;
+  border-radius: 12px;
+  padding: 28px 32px;
+  border: 1px solid #1a1a1a;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  margin-bottom: 8px;
+  opacity: 0.75;
+}
+
+.press-quote-card:hover {
+  transform: translateY(-2px);
+  border-color: #333;
+}
+
+.press-quote-text {
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #eaeaea;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.press-attribution {
+  font-size: 0.9rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.press-pub-name {
+  color: #3e8ed0; /* A clean blue to match your reference image */
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.press-link-text {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.press-link-text:hover {
+  color: #fff;
 }
 .title{
     border: none

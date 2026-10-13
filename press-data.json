@@ -1,14 +1,37 @@
 [
   {
     "publication": "EARMILK",
+    "writer": "Natalie Patrick",
     "date": "May 20, 2026",
-    "headline": "Cries of Redemption steps into bold territory with “The Return (Raw)",
+    "headline": "Cries of Redemption steps into bold territory with “The Return (Raw)”",
     "url": "https://earmilk.com/2026/05/20/cries-of-redemption-steps-into-bold-territory-with-the-return-raw/"
   },
   {
-    "publication": "Savannah Local Indie",
-    "date": "Sep 22, 2026",
-    "headline": "Ed Silva's new project defies genre conventions with a massive wall of sound.",
-    "url": "https://link-to-article.com"
+    "publication": "TPL News",
+    "writer": "Tamara Jenna",
+    "date": "March 02, 2026",
+    "headline": "This Is What It Feels Like marks a key sonic shift for Ed Silva's long-running project...",
+    "url": "https://www.tjplnews.com/"
+  },
+  {
+    "publication": "Zillions",
+    "writer": "Editor",
+    "date": "April 23, 2026",
+    "headline": "Cries of Redemption reclaims their roots with “Torn",
+    "url": "https://www.zillionsmagazine.com/2026/04/cries-of-redemption-reclaims-their.html"
+  },
+  {
+    "publication": "Rock Era Magazina",
+    "writer": "REM News Team",
+    "date": "April 7, 2026",
+    "headline": "CRIES OF REDEMPTION: BILLY BABCOCK RETURNS, TJPL CLASS OF 2026 INDUCTION, AND U.S. STUDIO EXPANSION",
+    "url": "https://rockeramagazine.com/cor-tjpl-2026/"
+  },
+  {
+    "publication": "Ilustrate Magazine",
+    "writer": "Staff",
+    "date": "January 23, 2026",
+    "headline": "What Lies Beneath by Cries of Redemption: Review",
+    "url": "https://illustratemagazine.com/what-lies-beneath-by-cries-of-redemption-review/"
   }
 ]

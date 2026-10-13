@@ -77,7 +77,7 @@ navLinks.forEach(link => {
   });
 });
 
-fetch('press-data.json')
+/* fetch('press-data.json')
   .then(res => res.json())
   .then(pressArticles => {
     const pressContainer = document.getElementById('press-list');
@@ -88,13 +88,45 @@ fetch('press-data.json')
       pressLink.target = "_blank";
       pressLink.className = 'box has-background-black-bis custom-border press-article';
       
+      // Safely check if a writer exists so we don't print "By undefined"
+      const authorText = article.writer ? `By ${article.writer} &bull; ` : '';
+      
+      // We swapped the hierarchy here: Publication is now the main title, headline is smaller
       pressLink.innerHTML = `
-        <p class="is-size-7 has-text-grey mb-1">${article.publication} &bull; ${article.date}</p>
-        <h3 class="title is-5 has-text-white mb-2">${article.headline}</h3>
-        <p class="is-size-6 has-text-grey-light">Read article <i class="fa-solid fa-arrow-right is-size-7 ml-1"></i></p>
+        <h3 class="title is-4 has-text-white mb-2">${article.publication}</h3>
+        <p class="is-size-6 has-text-grey-light is-italic mb-3">"${article.headline}"</p>
+        <p class="is-size-7 has-text-grey mb-2">${authorText}${article.date}</p>
+        <p class="is-size-7 has-text-white-ter mt-2">Read article <i class="fa-solid fa-arrow-right is-size-7 ml-1"></i></p>
       `;
       
       pressContainer.appendChild(pressLink);
+    });
+  })
+  .catch(err => console.error("Error loading press data:", err)); */
+
+  fetch('press-data.json')
+  .then(res => res.json())
+  .then(pressArticles => {
+    const pressContainer = document.getElementById('press-list');
+    
+    pressArticles.forEach(article => {
+      const pressWrapper = document.createElement('div');
+      
+      // Formats the writer nicely, but won't break if a writer isn't listed
+      const authorText = article.writer ? ` (${article.writer})` : '';
+      
+      pressWrapper.innerHTML = `
+        <div class="press-quote-card">
+          <div class="press-quote-text">"${article.headline}"</div>
+          <div class="press-attribution">
+            &mdash; <span class="press-pub-name">${article.publication}</span> ${authorText} 
+            <span class="mx-2">|</span> 
+            <a href="${article.url}" target="_blank" class="press-link-text">Read the Full Article &rarr;</a>
+          </div>
+        </div>
+      `;
+      
+      pressContainer.appendChild(pressWrapper);
     });
   })
   .catch(err => console.error("Error loading press data:", err));
