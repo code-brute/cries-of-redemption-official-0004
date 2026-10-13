@@ -86,61 +86,38 @@
     </script>
   </head>
   <body class="has-background-black has-navbar-fixed-top">
-    <nav
-      class="navbar is-fixed-top has-background-black-bis custom-border-bottom"
-      role="navigation"
-    >
-      <div
-        class="navbar-menu is-active is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap py-2"
-        style="width: 100%; box-shadow: none"
-      >
-        <!-- Added the 'nav-trigger' class here so JS can target them -->
-        <a href="#home" class="navbar-item has-text-grey-light px-3 nav-trigger"
-          >Home</a
-        >
+    <nav class="navbar is-fixed-top has-background-black-bis custom-border-bottom" role="navigation">
+  <div class="navbar-brand">
+    <!-- The Hamburger Icon -->
+    <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false" data-target="mainNav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-        <a
-          href="#music"
-          class="navbar-item has-text-grey-light px-3 nav-trigger"
-          >Music</a
-        >
-        <a
-          href="#videos"
-          class="navbar-item has-text-grey-light px-3 nav-trigger"
-          >Videos</a
-        >
-        <a
-          href="#press"
-          class="navbar-item has-text-grey-light px-3 nav-trigger"
-          >Press</a
-        >
-        <a
-          href="#photos"
-          class="navbar-item has-text-grey-light px-3 nav-trigger"
-          >Photos</a
-        >
-        <a href="#bio" class="navbar-item has-text-grey-light px-3 nav-trigger"
-          >Bio</a
-        >
-
-        <div class="navbar-item px-3">
-          <div class="field has-addons mb-0">
-            <div class="control">
-              <input
-                class="input is-small is-rounded has-background-black has-text-white custom-border"
-                type="email"
-                placeholder="Join mailing list"
-              />
-            </div>
-            <div class="control">
-              <button class="button is-small is-dark is-rounded custom-border">
-                Subscribe
-              </button>
-            </div>
+  <div id="mainNav" class="navbar-menu has-background-black-bis py-2" style="box-shadow: none;">
+    <div class="navbar-start is-flex-grow-1 is-justify-content-center">
+      <a href="#home" class="navbar-item has-text-grey-light px-3 nav-trigger">Home</a>
+      <a href="#bio" class="navbar-item has-text-grey-light px-3 nav-trigger">Bio</a>
+      <a href="#music" class="navbar-item has-text-grey-light px-3 nav-trigger">Music</a>
+      <a href="#videos" class="navbar-item has-text-grey-light px-3 nav-trigger">Videos</a>
+      <a href="#photos" class="navbar-item has-text-grey-light px-3 nav-trigger">Photos</a>
+      <a href="#press" class="navbar-item has-text-grey-light px-3 nav-trigger">Press</a>
+      
+      <div class="navbar-item px-3">
+        <div class="field has-addons mb-0">
+          <div class="control">
+            <input class="input is-small is-rounded has-background-black has-text-white custom-border" type="email" placeholder="Join mailing list">
+          </div>
+          <div class="control">
+            <button class="button is-small is-dark is-rounded custom-border">Subscribe</button>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
 
     <!-- HOME VIEW: Visible by default -->
     <section

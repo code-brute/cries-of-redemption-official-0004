@@ -107,7 +107,7 @@ fetch('press-data.json')
     videos.forEach(video => {
       // Create a column that takes up half the screen on desktop, full width on mobile
       const col = document.createElement('div');
-      col.className = 'column is-half'; 
+      col.className = 'column is-one-third-desktop is-half-tablet is-full-mobile'; 
       
       // We inject the YouTube ID directly into the embed URL. 
       // loading="lazy" is critical here so the page doesn't slow down.
@@ -121,3 +121,24 @@ fetch('press-data.json')
     });
   })
   .catch(err => console.error("Error loading video data:", err));
+
+  // --- Mobile Hamburger Menu Logic ---
+const burger = document.querySelector('.navbar-burger');
+const navMenu = document.getElementById('mainNav');
+
+if (burger && navMenu) {
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('is-active');
+    navMenu.classList.toggle('is-active');
+  });
+}
+
+// Close the mobile menu when a navigation link is clicked
+document.querySelectorAll('.nav-trigger').forEach(link => {
+  link.addEventListener('click', () => {
+    if (navMenu.classList.contains('is-active')) {
+      burger.classList.remove('is-active');
+      navMenu.classList.remove('is-active');
+    }
+  });
+});
