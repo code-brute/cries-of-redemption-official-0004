@@ -11,59 +11,59 @@
   },
   "songs": [
            {
-      "title": "Behind The Mask - feat Sela Hafoka-Hauser",
+      "title": "Behind The Mask - (feat. Sela Hafoka-Hauser)",
       "duration": "4:30",
       "file": "assets/audio/behind-the-mask.mp3"
     },
     {
-      "title": "An Eerie Feeling - feat Luisa Restrepo",
+      "title": "An Eerie Feeling - (feat. Luisa Restrepo)",
       "duration": "3:59",
       "file": "assets/audio/an-eerie-feeling.wav"
     },
         {
-      "title": "This Is What It Feels Like - feat Maria Duque",
+      "title": "This Is What It Feels Like - (feat. Maria Duque)",
       "duration": "4:10",
       "file": "assets/audio/this-is-what.wav"
     },
-            {
-      "title": "After The Storm feat Kayla Rice",
-      "duration": "4:13",
-      "file": "assets/audio/after-the-storm.wav"
-    },
         {
-      "title": "Tempting Fate - feat Sela Hafoka-Hauser",
+      "title": "Tempting Fate - (feat. Sela Hafoka-Hauser)",
       "duration": "3:40",
       "file": "assets/audio/tempting-fate.mp3"
     },
     {
-      "title": "Angel - feat Hege",
+      "title": "Angel - (feat. Hege)",
       "duration": "5:04",
       "file": "assets/audio/angel.wav"
     },
     {
-      "title": "Show Me feat Sela Hafoka-Hauser",
+      "title": "Show Me (feat. Sela Hafoka-Hauser)",
       "duration": "4:03",
       "file": "assets/audio/show-me.mp3"
     },
     {
-      "title": "What Lies Beneath - feat Martina Questa",
+      "title": "What Lies Beneath - (feat. Martina Questa)",
       "duration": "4:14",
       "file": "assets/audio/what-lies-beneath.mp3"
     },
     {
-      "title": "Impulse - feat Chiara",
+      "title": "Impulse - (feat. Chiara)",
       "duration": "4:22",
       "file": "assets/audio/impulse.wav"
     },
         {
-      "title": "Not The Same feat Sela Hafoka-Hauser",
+      "title": "Not The Same (feat. Sela Hafoka-Hauser)",
       "duration": "4:06",
       "file": "assets/audio/not-the-same.mp3"
     },
       {
-      "title": "Torn feat Maria Duque",
+      "title": "Torn (feat. Maria Duque)",
       "duration": "3:04",
       "file": "assets/audio/torn.wav"
+    },
+                {
+      "title": "After The Storm (feat. Kayla Rice)",
+      "duration": "4:13",
+      "file": "assets/audio/after-the-storm.wav"
     }
   ],
   "photos": [
