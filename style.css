@@ -156,3 +156,13 @@ body {
   padding: 12px 20px;
   z-index: 40; 
 }
+.press-article {
+  transition: all 0.2s ease;
+  border-left: 4px solid #555;
+  display: block;
+}
+
+.press-article:hover {
+  background-color: #111 !important;
+  border-left-color: #fff;
+}
