@@ -4,35 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO: Expand the title to include your band name, location, and primary genres to target specific search intent -->
   <title>Cries Of Redemption | Experimental Rock & NuMetal from Savannah, GA</title>
-  
-  <!-- SEO: Add a meta description summarizing your project. Search engines use this for the snippet in search results -->
   <meta name="description" content="Cries of Redemption is an experimental rock and NuMetal project by Ed Silva based in Savannah, Georgia. Music first! Music only! Zero gimmicks!">
-  
-  <!-- SEO: Add relevant keywords, though search engines rely more on content and description today -->
   <meta name="keywords" content="Cries of Redemption, Ed Silva, Savannah Georgia rock band, Experimental Rock, NuMetal, Classic Trance, Patterns album">
   
-  <!-- SEO: Open Graph tags ensure that when your link is shared on social media (Facebook, Discord, etc.), a rich preview card is generated -->
   <meta property="og:title" content="Cries Of Redemption | Official Music Site">
   <meta property="og:description" content="Discover the atmospheric, heavy, and cinematic rock sounds of Ed Silva's project, Cries of Redemption.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.criesofredemptionmusic.com/">
   <meta property="og:image" content="https://www.criesofredemptionmusic.com/apple-touch-icon.png">
 
-  <!-- SEO: Twitter Card tags function similarly to Open Graph but are optimized specifically for X/Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Cries Of Redemption | Official Music Site">
   <meta name="twitter:description" content="Experimental rock and NuMetal project by Ed Silva based in Savannah, Georgia.">
   <meta name="twitter:image" content="https://www.criesofredemptionmusic.com/apple-touch-icon.png">
 
-  <!-- Correct root-level favicon tags -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- SEO: Canonical link prevents duplicate content penalties if your site is accessed via multiple URL variations (e.g., with or without 'www') -->
   <link rel="canonical" href="https://www.criesofredemptionmusic.com/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
@@ -40,7 +31,6 @@
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <link rel="stylesheet" href="style.css">
 
-  <!-- SEO: JSON-LD Structured Data explicitly tells search engines that this site represents a MusicGroup, improving rich search results -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,42 +53,64 @@
   }
   </script>
 </head>
-<body class="has-background-black">
-  <main class="container is-max-desktop pb-6 mb-6">
-    <header class="has-text-centered sticky-header">
-      <figure class="image is-128x128 is-inline-block mb-3">
-        <!-- SEO: Include descriptive fallback 'alt' text for accessibility and image search indexing, even if the src is injected dynamically -->
-        <img id="band-avatar" src="" alt="Cries of Redemption Official Band Logo" class="is-rounded custom-avatar">
+<body class="has-background-black has-navbar-fixed-top">
+  
+  <nav class="navbar is-fixed-top has-background-black-bis custom-border-bottom" role="navigation">
+    <div class="navbar-menu is-active is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap py-2" style="width: 100%; box-shadow: none;">
+      <a href="#home" class="navbar-item has-text-grey-light px-3">Home</a>
+      <a href="#bio" class="navbar-item has-text-grey-light px-3">Bio</a>
+      <a href="#music" class="navbar-item has-text-grey-light px-3">Music</a>
+      <a href="#photos" class="navbar-item has-text-grey-light px-3">Photos</a>
+      
+      <div class="navbar-item px-3">
+        <div class="field has-addons mb-0">
+          <div class="control">
+            <input class="input is-small is-rounded has-background-black has-text-white custom-border" type="email" placeholder="Join mailing list">
+          </div>
+          <div class="control">
+            <button class="button is-small is-dark is-rounded custom-border">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero is-fullheight-with-navbar is-black">
+    <div class="hero-body is-flex-direction-column is-justify-content-center is-align-items-center">
+      <figure class="image mb-4" style="max-width: 500px; width: 100%;">
+        <img src="assets/images/photo1.jpg" alt="Cries of Redemption Official Logo">
       </figure>
-      <!-- SEO: You correctly have a single <h1> element, which search engines use to determine the main topic of the page -->
-      <h1 id="band-name" class="title is-2 mb-2" style="letter-spacing: 1px;"></h1>
-      <p id="band-tagline" class="subtitle is-6 is-uppercase has-text-grey mb-3"></p>
+      <p id="band-tagline" class="subtitle is-5 is-uppercase has-text-grey mb-4 has-text-centered"></p>
+    </div>
+  </section>
+
+  <main class="cr-background container is-max-desktop pb-6 mb-6">
+    <section id="bio" class="section px-5 pt-6 has-text-centered">
+      <h2 class="title is-4 is-uppercase custom-border-bottom pb-2 mb-4">Bio</h2>
       <div id="band-location" class="tag is-dark is-rounded mb-4 custom-border"></div>
       <p id="band-bio" class="content has-text-grey-light mx-auto mb-0" style="max-width: 600px;"></p>
-    </header>
+    </section>
 
     <div class="px-5">
-      <section class="section pt-4 px-0">
-        <!-- SEO: <h2> tags establish a logical content hierarchy beneath your <h1> -->
+      <section id="music" class="section pt-6 px-0">
         <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Songs</h2>
         <div id="song-list" class="is-flex is-flex-direction-column" style="gap: 8px;"></div>
       </section>
 
-      <section class="section pt-0 px-0">
+      <section class="section pt-0 px-0 mt-6">
         <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Albums</h2>
         <div class="box is-flex is-align-items-center has-background-black-bis custom-border" style="gap: 16px;">
           <figure class="image is-96x96 m-0">
-            <!-- SEO: Descriptive alt text for album covers -->
             <img id="album-cover" src="" alt="Cries of Redemption Album Artwork" class="is-rounded" style="object-fit: cover;">
           </figure>
           <div>
-            <div id="album-title" class="title is-6 mb-1"></div>
+            <div id="album-title" class="title is-6 mb-1 has-text-white"></div>
             <div id="album-subtitle" class="subtitle is-7 has-text-grey"></div>
           </div>
         </div>
       </section>
 
-      <section class="section pt-0 px-0 mb-6">
+      <section id="photos" class="section pt-6 px-0 mb-6">
         <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">Photos</h2>
         <div id="photo-grid"></div>
       </section>
@@ -109,7 +121,6 @@
     <div class="container is-max-desktop is-flex is-align-items-center is-justify-content-space-between" style="gap: 24px; width: 100%;">
       <div id="now-playing-title" class="is-size-6 has-text-weight-semibold has-text-white is-flex-shrink-0" style="white-space: nowrap;">Select a track to play</div>
       <div class="is-flex-grow-1">
-        <!-- SEO: Native HTML5 audio provides clear semantic cues for accessibility tools and web crawlers -->
         <audio id="audio-player" controls controlsList="nodownload"></audio>
       </div>
     </div>
@@ -121,7 +132,6 @@
       controls: ['play', 'progress', 'current-time', 'mute', 'volume']
     });
   </script>
-  <!-- SEO Tip: Ensure player.js also updates the DOM document.title and URL parameters if the user navigates between different tracks or pages -->
   <script src="player.js"></script>
 </body>
 </html>

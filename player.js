@@ -1,9 +1,7 @@
 fetch('band-data.json')
   .then(res => res.json())
   .then(data => {
-    // Populate Bio & Header
-    document.getElementById('band-avatar').src = data.avatar;
-    document.getElementById('band-name').textContent = data.bandName;
+    // Populate Bio & Header Text
     document.getElementById('band-tagline').textContent = data.tagline;
     document.getElementById('band-location').textContent = data.location;
     document.getElementById('band-bio').textContent = data.bio;
@@ -31,7 +29,6 @@ fetch('band-data.json')
       const row = document.createElement('div');
       row.className = 'song-row';
       
-      // Fixed-width track-index-container prevents titles from shifting during hover
       row.innerHTML = `
         <div class="song-info">
           <div class="track-index-container">
