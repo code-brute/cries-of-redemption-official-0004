@@ -127,13 +127,26 @@
           if (has(profile.avatar_url)) out.avatar = text(profile.avatar_url);
           used.push('profile');
         }
-        if (album && has(album.title)) {
-          out.album = {
-            title: text(album.title),
-            subtitle: text(album.subtitle),
-            cover: has(album.cover_url) ? text(album.cover_url) : ((out.album && out.album.cover) || '')
-          };
-          used.push('album');
+        var rawAlbums = (raw[1] || [])
+          .filter(function (a) { return a && has(a.title); })
+          .map(function (a) {
+            return {
+              id: a.id,
+              title: text(a.title),
+              subtitle: text(a.subtitle),
+              year: text(a.year),
+              cover: has(a.cover_url) ? text(a.cover_url) : ((out.album && out.album.cover) || 'assets/images/album-cover.jpg')
+            };
+          });
+        var localAlbums = (local && Array.isArray(local.albums)) ? local.albums : ((local && local.album) ? [local.album] : []);
+
+        if (rawAlbums.length) {
+          out.albums = rawAlbums;
+          out.album = rawAlbums[0];
+          used.push(rawAlbums.length + ' albums');
+        } else if (localAlbums.length) {
+          out.albums = localAlbums;
+          out.album = localAlbums[0];
         }
         if (songs.length) { out.songs = songs; used.push(songs.length + ' songs'); }
         if (photos.length) { out.photos = photos; used.push(photos.length + ' photos'); }

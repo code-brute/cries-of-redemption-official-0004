@@ -106,5 +106,13 @@
     "assets/images/photo2.jpg",
     "assets/images/photo3.jpg",
     "assets/images/photo4.jpg"
+  ],
+  "albums": [
+    {
+      "title": "A Collection of Singles",
+      "subtitle": "27 songs",
+      "year": "2024",
+      "cover": "assets/images/album-cover.jpg"
+    }
   ]
 }

@@ -429,3 +429,81 @@ body {
   color: #d1d1d6;
   font-size: 0.95rem;
 }
+
+
+/* ============================================================================
+   Fan Playlist & Subscribe Styling
+   ============================================================================ */
+.song-playlist-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #666;
+  border-radius: 4px;
+  padding: 4px 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.song-row:hover .song-playlist-btn {
+  color: #aaa;
+}
+
+.song-playlist-btn:hover {
+  color: #f14668 !important;
+  background: rgba(241, 70, 104, 0.12);
+  border-color: rgba(241, 70, 104, 0.25);
+}
+
+.fan-toast {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  background: #18181c;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 0.88rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+  z-index: 3000;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
+  max-width: 380px;
+}
+
+.fan-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fan-toast.is-success {
+  border-left: 4px solid #48c78e;
+}
+
+.fan-toast.is-error {
+  border-left: 4px solid #f14668;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Album Card Grid Styling */
+.album-box-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.album-box-card:hover {
+  transform: translateY(-2px);
+  border-color: #333 !important;
+}

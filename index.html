@@ -175,22 +175,35 @@
             >Bio</a
           >
 
-          <div class="navbar-item px-3">
-            <div class="field has-addons mb-0">
+          <div class="navbar-item px-3" id="fan-auth-container">
+            <form id="subscribe-form" class="field has-addons mb-0">
               <div class="control">
                 <input
+                  id="subscribe-email"
                   class="input is-small is-rounded has-background-black has-text-white custom-border"
                   type="email"
                   placeholder="Join mailing list"
+                  required
                 />
               </div>
               <div class="control">
                 <button
+                  id="subscribe-btn"
+                  type="submit"
                   class="button is-small is-dark is-rounded custom-border"
                 >
                   Subscribe
                 </button>
               </div>
+            </form>
+            <div id="fan-logged-in-bar" class="is-hidden is-flex is-align-items-center" style="gap: 8px;">
+              <span id="fan-greeting" class="is-size-7 has-text-grey-light" style="max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>
+              <button id="btn-open-playlist" type="button" class="button is-small is-dark is-rounded custom-border" title="View your custom playlist">
+                <i class="fa-solid fa-list mr-1"></i> Playlist (<span id="playlist-count">0</span>)
+              </button>
+              <button id="fan-signout-btn" type="button" class="button is-small is-text has-text-grey p-0 ml-1" title="Sign out" style="text-decoration: none;">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -276,28 +289,32 @@
           <h2 class="title is-5 is-uppercase custom-border-bottom pb-2 mb-4">
             Albums
           </h2>
-          <div
-            class="box is-flex is-align-items-center has-background-black-bis custom-border"
-            style="gap: 16px"
-          >
-            <figure class="image is-96x96 m-0">
-              <img
-                id="album-cover"
-                src=""
-                alt="Cries of Redemption Album Artwork"
-                class="is-rounded"
-                style="object-fit: cover"
-              />
-            </figure>
-            <div>
+          <div id="album-grid" class="columns is-multiline">
+            <div class="column is-12">
               <div
-                id="album-title"
-                class="title is-6 mb-1 has-text-white"
-              ></div>
-              <div
-                id="album-subtitle"
-                class="subtitle is-7 has-text-grey"
-              ></div>
+                class="box is-flex is-align-items-center has-background-black-bis custom-border"
+                style="gap: 16px"
+              >
+                <figure class="image is-96x96 m-0" style="flex-shrink: 0;">
+                  <img
+                    id="album-cover"
+                    src="assets/images/album-cover.jpg"
+                    alt="Cries of Redemption Album Artwork"
+                    class="is-rounded"
+                    style="object-fit: cover; width: 96px; height: 96px;"
+                  />
+                </figure>
+                <div>
+                  <div
+                    id="album-title"
+                    class="title is-6 mb-1 has-text-white"
+                  >A Collection of Singles</div>
+                  <div
+                    id="album-subtitle"
+                    class="subtitle is-7 has-text-grey"
+                  >27 songs</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -501,8 +518,49 @@
         controls: ["play", "progress", "current-time", "mute", "volume"],
       });
     </script>
+    <!-- FAN CUSTOM PLAYLIST DRAWER -->
+    <div
+      class="song-details-overlay"
+      id="fan-playlist-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="My Playlist"
+    >
+      <div class="song-details-content">
+        <div
+          class="is-flex is-justify-content-space-between is-align-items-center mb-4 pb-3"
+          style="border-bottom: 1px solid #1f1f22;"
+        >
+          <div class="is-flex is-align-items-center" style="gap: 8px;">
+            <i class="fa-solid fa-list has-text-danger"></i>
+            <span class="is-size-6 has-text-weight-bold has-text-white is-uppercase" style="letter-spacing: 1px;">
+              My Playlist
+            </span>
+          </div>
+          <button
+            class="delete is-medium"
+            id="fan-playlist-close"
+            aria-label="close"
+          ></button>
+        </div>
+
+        <div class="is-flex is-justify-content-space-between is-align-items-center mb-4">
+          <p class="is-size-7 has-text-grey">Custom queue saved to your fan profile.</p>
+          <button id="btn-play-all-playlist" class="button is-small is-danger is-rounded custom-border">
+            <i class="fa-solid fa-play mr-1"></i> Play All
+          </button>
+        </div>
+
+        <div id="fan-playlist-items">
+          <!-- Dynamically populated by fan-auth.js -->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
     <script src="data-source.js"></script>
     <script src="player.js"></script>
+    <script src="fan-auth.js"></script>
   </body>
 </html>

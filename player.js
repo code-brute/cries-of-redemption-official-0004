@@ -14,10 +14,42 @@ loadSiteData('band-data.json')
     document.getElementById('band-location').textContent = data.location;
     document.getElementById('band-bio').textContent = data.bio;
 
-    // Populate Album
-    document.getElementById('album-cover').src = data.album.cover;
-    document.getElementById('album-title').textContent = data.album.title;
-    document.getElementById('album-subtitle').textContent = data.album.subtitle;
+    // Populate Albums (Supporting multiple albums from Supabase / admin)
+    const albumGrid = document.getElementById('album-grid');
+    const albumsList = (data.albums && data.albums.length > 0) ? data.albums : (data.album ? [data.album] : []);
+
+    if (albumGrid && albumsList.length > 0) {
+      albumGrid.innerHTML = '';
+      albumsList.forEach(album => {
+        const col = document.createElement('div');
+        col.className = albumsList.length === 1 ? 'column is-12' : 'column is-half-tablet is-one-third-desktop';
+        col.innerHTML = [
+          '<div class="box is-flex is-align-items-center has-background-black-bis custom-border album-box-card h-100" style="gap: 16px;">',
+          '  <figure class="image is-96x96 m-0" style="flex-shrink: 0;">',
+          '    <img',
+          '      src="' + (album.cover || album.cover_url || 'assets/images/album-cover.jpg') + '"',
+          '      alt="' + album.title + '"',
+          '      class="is-rounded"',
+          '      style="object-fit: cover; width: 96px; height: 96px;"',
+          '    />',
+          '  </figure>',
+          '  <div>',
+          '    <div class="title is-6 mb-1 has-text-white">' + album.title + '</div>',
+          '    <div class="subtitle is-7 has-text-grey mb-1">' + (album.subtitle || '') + '</div>',
+          album.year ? '    <span class="tag is-dark is-small custom-border">' + album.year + '</span>' : '',
+          '  </div>',
+          '</div>'
+        ].filter(Boolean).join('\n');
+        albumGrid.appendChild(col);
+      });
+    } else if (data.album) {
+      const coverEl = document.getElementById('album-cover');
+      const titleEl = document.getElementById('album-title');
+      const subEl = document.getElementById('album-subtitle');
+      if (coverEl) coverEl.src = data.album.cover || 'assets/images/album-cover.jpg';
+      if (titleEl) titleEl.textContent = data.album.title || '';
+      if (subEl) subEl.textContent = data.album.subtitle || '';
+    }
 
     // Populate Photos
     const photoContainer = document.getElementById('photo-grid');
