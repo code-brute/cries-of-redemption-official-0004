@@ -428,8 +428,72 @@
         <div class="is-flex-grow-1" style="min-width: 0">
           <audio id="audio-player" controls controlsList="nodownload"></audio>
         </div>
+        <button
+          id="btn-current-song-info"
+          class="button is-small is-dark custom-border"
+          title="Song Details, Lyrics &amp; Credits"
+          aria-label="View Song Details, Lyrics and Credits"
+          style="flex-shrink: 0;"
+        >
+          <i class="fa-solid fa-file-lines"></i>
+        </button>
       </div>
     </aside>
+
+    <!-- SONG DETAILS, CREDITS & LYRICS MODAL DRAWER -->
+    <div
+      class="song-details-overlay"
+      id="song-details-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Song Details and Lyrics"
+    >
+      <div class="song-details-content">
+        <div
+          class="is-flex is-justify-content-space-between is-align-items-center mb-4 pb-3"
+          style="border-bottom: 1px solid #1f1f22;"
+        >
+          <span class="is-size-6 has-text-weight-bold has-text-white is-uppercase" style="letter-spacing: 1px;">
+            Lyrics &amp; Credits
+          </span>
+          <button
+            class="delete is-medium"
+            id="song-details-close"
+            aria-label="close"
+          ></button>
+        </div>
+
+        <div class="drawer-artwork-frame">
+          <img
+            id="drawer-artwork"
+            src="assets/images/album-cover.jpg"
+            alt="Song Artwork"
+            class="drawer-artwork-img"
+          />
+        </div>
+
+        <h3 class="title is-4 mb-2 has-text-white" id="drawer-title">Song Title</h3>
+
+        <div class="box has-background-black-bis custom-border p-3 mb-4">
+          <p class="is-size-7 has-text-grey-light mb-1">
+            <strong class="has-text-grey">Composer(s):</strong> <span id="drawer-composers" class="has-text-white">Ed Silva</span>
+          </p>
+          <p class="is-size-7 has-text-grey-light mb-1">
+            <strong class="has-text-grey">Collaborator(s):</strong> <span id="drawer-collaborators" class="has-text-white">—</span>
+          </p>
+          <p class="is-size-7 has-text-grey">
+            <strong class="has-text-grey">Copyright:</strong> &copy; 2007 - 2026 Cries of Redemption. All Rights Reserved.
+          </p>
+        </div>
+
+        <h4 class="title is-6 mb-2 has-text-grey-light is-uppercase" style="letter-spacing: 1px; font-size: 0.8rem;">
+          Lyrics
+        </h4>
+        <div class="drawer-lyrics-text" id="drawer-lyrics">
+          Lyrics currently unavailable for this track.
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script>

@@ -338,3 +338,94 @@ body {
   line-height: 1.7;
   margin-bottom: 20px;
 }
+
+
+/* ============================================================================
+   Song Details, Credits & Lyrics Slide-Over Drawer
+   ============================================================================ */
+.song-info-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #666;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.song-row:hover .song-info-btn {
+  color: #aaa;
+}
+
+.song-info-btn:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.song-details-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.song-details-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.song-details-content {
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  background: #0d0d10;
+  border-left: 1px solid #1f1f22;
+  padding: 28px 24px 80px 24px;
+  overflow-y: auto;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.95);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.song-details-overlay.is-active .song-details-content {
+  transform: translateX(0);
+}
+
+.drawer-artwork-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 8px;
+  border: 1px solid #222;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.drawer-artwork-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.drawer-lyrics-text {
+  white-space: pre-line;
+  line-height: 1.85;
+  color: #d1d1d6;
+  font-size: 0.95rem;
+}

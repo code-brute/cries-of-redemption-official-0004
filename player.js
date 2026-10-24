@@ -33,25 +33,101 @@ loadSiteData('band-data.json')
     const audio = document.getElementById('audio-player');
     const nowPlaying = document.getElementById('now-playing-title');
 
+    // Drawer elements & Song Details logic
+    let currentActiveSong = (data.songs && data.songs[0]) || null;
+    const drawer = document.getElementById('song-details-drawer');
+    const drawerCloseBtn = document.getElementById('song-details-close');
+    const drawerArtwork = document.getElementById('drawer-artwork');
+    const drawerTitle = document.getElementById('drawer-title');
+    const drawerComposers = document.getElementById('drawer-composers');
+    const drawerCollaborators = document.getElementById('drawer-collaborators');
+    const drawerLyrics = document.getElementById('drawer-lyrics');
+
+    function openSongDetails(song) {
+      if (!song || !drawer) return;
+      if (drawerArtwork) {
+        drawerArtwork.src = song.artwork || (data.album && data.album.cover) || 'assets/images/album-cover.jpg';
+      }
+      if (drawerTitle) {
+        drawerTitle.textContent = song.title;
+      }
+      if (drawerComposers) {
+        drawerComposers.textContent = song.composers || 'Ed Silva';
+      }
+      if (drawerCollaborators) {
+        drawerCollaborators.textContent = song.collaborators || '—';
+      }
+      if (drawerLyrics) {
+        drawerLyrics.textContent = song.lyrics || 'Lyrics currently unavailable for this track.';
+      }
+      drawer.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSongDetails() {
+      if (!drawer) return;
+      drawer.classList.remove('is-active');
+      document.body.style.overflow = '';
+    }
+
+    if (drawerCloseBtn) {
+      drawerCloseBtn.addEventListener('click', closeSongDetails);
+    }
+    if (drawer) {
+      drawer.addEventListener('click', (e) => {
+        if (e.target === drawer) closeSongDetails();
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer && drawer.classList.contains('is-active')) {
+        closeSongDetails();
+      }
+    });
+
+    const playerBarInfoBtn = document.getElementById('btn-current-song-info');
+    if (playerBarInfoBtn) {
+      playerBarInfoBtn.addEventListener('click', () => {
+        if (currentActiveSong) {
+          openSongDetails(currentActiveSong);
+        } else if (data.songs && data.songs.length > 0) {
+          openSongDetails(data.songs[0]);
+        }
+      });
+    }
+
     data.songs.forEach((song, index) => {
       const row = document.createElement('div');
       row.className = 'song-row';
       
-      row.innerHTML = `
-        <div class="song-info">
-          <div class="track-index-container">
-            <span class="track-number">${index + 1}</span>
-            <i class="fa-solid fa-play play-icon"></i>
-          </div>
-          <span class="song-title">${song.title}</span>
-        </div>
-        <span class="song-duration">${song.duration}</span>
-      `;
+      row.innerHTML = [
+        '<div class="song-info">',
+        '  <div class="track-index-container">',
+        '    <span class="track-number">' + (index + 1) + '</span>',
+        '    <i class="fa-solid fa-play play-icon"></i>',
+        '  </div>',
+        '  <span class="song-title">' + song.title + '</span>',
+        '</div>',
+        '<div class="is-flex is-align-items-center" style="gap: 12px;">',
+        '  <button class="song-info-btn" title="View credits & lyrics" aria-label="View credits and lyrics for ' + song.title + '">',
+        '    <i class="fa-solid fa-file-lines"></i>',
+        '  </button>',
+        '  <span class="song-duration">' + song.duration + '</span>',
+        '</div>'
+      ].join('');
 
-            row.addEventListener('click', () => {
+      const infoBtn = row.querySelector('.song-info-btn');
+      if (infoBtn) {
+        infoBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openSongDetails(song);
+        });
+      }
+
+      row.addEventListener('click', () => {
+        currentActiveSong = song;
         document.querySelectorAll('.song-row').forEach(r => r.classList.remove('active'));
         row.classList.add('active');
-        nowPlaying.textContent = `Playing: ${song.title}`;
+        nowPlaying.textContent = 'Playing: ' + song.title;
         if (window.plyrPlayer) {
           window.plyrPlayer.source = {
             type: 'audio',
@@ -67,7 +143,7 @@ loadSiteData('band-data.json')
 
       songContainer.appendChild(row);
     });
-  })
+    })
   .catch(err => console.error("Error loading band data:", err));
 
 /* // --- Single Page App Navigation Logic ---

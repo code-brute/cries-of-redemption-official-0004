@@ -97,17 +97,21 @@
         var out = local ? JSON.parse(JSON.stringify(local)) : {};
         var used = [];
 
+        var localSongs = (local && Array.isArray(local.songs)) ? local.songs : [];
         var songs = (raw[2] || [])
           .filter(function (s) { return s.is_active !== false && has(s.title) && has(s.file_url); })
-          .map(function (s) {
+          .map(function (s, index) {
+            var localMatch = localSongs.find(function (ls) {
+              return ls && ls.title && ls.title.trim().toLowerCase() === String(s.title).trim().toLowerCase();
+            }) || localSongs[index];
             return {
               title: text(s.title),
               duration: text(s.duration),
               file: text(s.file_url),
-              artwork: text(s.artwork_url),
-              lyrics: text(s.lyrics),
-              composers: text(s.composers),
-              collaborators: text(s.collaborators)
+              artwork: text(s.artwork_url) || (localMatch && text(localMatch.artwork)) || '',
+              lyrics: text(s.lyrics) || (localMatch && text(localMatch.lyrics)) || '',
+              composers: text(s.composers) || (localMatch && text(localMatch.composers)) || '',
+              collaborators: text(s.collaborators) || (localMatch && text(localMatch.collaborators)) || ''
             };
           });
 
