@@ -1,5 +1,13 @@
-fetch('band-data.json')
-  .then(res => res.json())
+// Loads site data from Supabase (via data-source.js) and falls back to the local JSON file.
+// If data-source.js is missing, this behaves exactly like the original fetch(file).then(res => res.json()).
+function loadSiteData(file) {
+  if (window.CORData && typeof window.CORData.load === 'function') {
+    return window.CORData.load(file);
+  }
+  return fetch(file).then(res => res.json());
+}
+
+loadSiteData('band-data.json')
   .then(data => {
     // Populate Bio & Header Text
     document.getElementById('band-tagline').textContent = data.tagline;
@@ -40,12 +48,21 @@ fetch('band-data.json')
         <span class="song-duration">${song.duration}</span>
       `;
 
-      row.addEventListener('click', () => {
+            row.addEventListener('click', () => {
         document.querySelectorAll('.song-row').forEach(r => r.classList.remove('active'));
         row.classList.add('active');
-        audio.src = song.file;
         nowPlaying.textContent = `Playing: ${song.title}`;
-        audio.play();
+        if (window.plyrPlayer) {
+          window.plyrPlayer.source = {
+            type: 'audio',
+            title: song.title,
+            sources: [{ src: song.file }]
+          };
+          window.plyrPlayer.play();
+        } else {
+          audio.src = song.file;
+          audio.play();
+        }
       });
 
       songContainer.appendChild(row);
@@ -142,8 +159,7 @@ window.addEventListener('DOMContentLoaded', () => {
   })
   .catch(err => console.error("Error loading press data:", err)); */
 
-  fetch('press-data.json')
-  .then(res => res.json())
+  loadSiteData('press-data.json')
   .then(pressArticles => {
     const pressContainer = document.getElementById('press-list');
     
@@ -169,23 +185,35 @@ window.addEventListener('DOMContentLoaded', () => {
   })
   .catch(err => console.error("Error loading press data:", err));
 
-  fetch('videos-data.json')
-  .then(res => res.json())
+  loadSiteData('videos-data.json')
   .then(videos => {
     const videoContainer = document.getElementById('video-grid');
     
-    videos.forEach(video => {
-      // Create a column that takes up half the screen on desktop, full width on mobile
+        videos.forEach(video => {
       const col = document.createElement('div');
-      col.className = 'column is-one-third-desktop is-half-tablet is-full-mobile'; 
+      col.className = 'column is-one-third-desktop is-half-tablet is-full-mobile';
       
-      // We inject the YouTube ID directly into the embed URL. 
-      // loading="lazy" is critical here so the page doesn't slow down.
+      // Clean video ID (strip query params if present for thumbnail lookup)
+      const rawId = (video.id || '').split('?')[0];
+      const thumbUrl = `https://img.youtube.com/vi/${rawId}/hqdefault.jpg`;
+      
       col.innerHTML = `
-        <figure class="image is-16by9 custom-border">
-          <iframe class="has-ratio" src="https://www.youtube.com/embed/${video.id}" title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <figure class="image is-16by9 custom-border video-facade-card" title="Click to play ${video.title}">
+          <img src="${thumbUrl}" alt="${video.title}" class="video-thumb-img" loading="lazy" />
+          <div class="video-play-overlay">
+            <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <div class="video-title-bar">${video.title}</div>
         </figure>
       `;
+
+      // On user click: swap to the real YouTube iframe
+      const card = col.querySelector('.video-facade-card');
+      card.addEventListener('click', () => {
+        card.innerHTML = `
+          <iframe class="has-ratio" src="https://www.youtube.com/embed/${video.id}&autoplay=1" title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
+      });
       
       videoContainer.appendChild(col);
     });
@@ -213,8 +241,7 @@ document.querySelectorAll('.nav-trigger').forEach(link => {
   });
 });
 
-fetch('blog-data.json')
-  .then(res => res.json())
+loadSiteData('blog-data.json')
   .then(posts => {
     const blogContainer = document.getElementById('blog-list');
     

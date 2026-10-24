@@ -205,9 +205,9 @@
       <div
         class="hero-body is-flex-direction-column is-justify-content-center is-align-items-center"
       >
-        <figure class="image mb-4" style="max-width: 500px; width: 100%">
+        <figure class="image mb-4" style="max-width: 320px; width: 100%">
           <img
-            src="assets/images/photo1.jpg"
+            src="assets/images/logo.jpg" class="home-logo-img"
             alt="Cries of Redemption Official Logo"
           />
         </figure>
@@ -433,10 +433,12 @@
 
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script>
-      const player = new Plyr("#audio-player", {
+      window.plyrPlayer = new Plyr("#audio-player", {
         controls: ["play", "progress", "current-time", "mute", "volume"],
       });
     </script>
+    <script src="supabase-config.js"></script>
+    <script src="data-source.js"></script>
     <script src="player.js"></script>
   </body>
 </html>
