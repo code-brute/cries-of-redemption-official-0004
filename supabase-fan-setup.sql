@@ -61,3 +61,4 @@ CREATE POLICY "Users manage own playlists" ON public.user_playlists
 -- Optional: grant permissions to anon and authenticated roles
 GRANT SELECT, INSERT ON public.subscribers TO anon, authenticated;
 GRANT ALL ON public.user_playlists TO authenticated;
+
