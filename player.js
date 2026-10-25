@@ -14,17 +14,69 @@ loadSiteData('band-data.json')
     document.getElementById('band-location').textContent = data.location;
     document.getElementById('band-bio').textContent = data.bio;
 
-    // Populate Albums (Supporting multiple albums from Supabase / admin)
+    // Populate Albums (Supporting multiple albums & tracklist filtering)
     const albumGrid = document.getElementById('album-grid');
     const albumsList = (data.albums && data.albums.length > 0) ? data.albums : (data.album ? [data.album] : []);
+    let currentSelectedAlbumId = null;
+
+    function filterSongsByAlbum(albumId) {
+      currentSelectedAlbumId = albumId;
+      const songRows = document.querySelectorAll('.song-row');
+      let visibleCount = 0;
+
+      data.songs.forEach((song, idx) => {
+        const row = songRows[idx];
+        if (!row) return;
+        const songAlbum = song.album_id || 1;
+        const matches = !albumId || Number(songAlbum) === Number(albumId);
+        if (matches) {
+          row.style.display = 'flex';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (albumGrid) {
+        albumGrid.querySelectorAll('.album-box-card').forEach(card => {
+          if (card.dataset.albumId && Number(card.dataset.albumId) === Number(albumId)) {
+            card.classList.add('is-active-album');
+          } else {
+            card.classList.remove('is-active-album');
+          }
+        });
+      }
+
+      let banner = document.getElementById('album-filter-banner');
+      if (albumId) {
+        const albumObj = albumsList.find(a => Number(a.id || 1) === Number(albumId));
+        const albumTitle = albumObj ? albumObj.title : 'Selected Album';
+        if (!banner) {
+          banner = document.createElement('div');
+          banner.id = 'album-filter-banner';
+          banner.className = 'box has-background-black-bis custom-border is-flex is-justify-content-space-between is-align-items-center mb-4 py-2 px-3';
+          const songListEl = document.getElementById('song-list');
+          if (songListEl) songListEl.parentNode.insertBefore(banner, songListEl);
+        }
+        banner.innerHTML = [
+          '<span class="is-size-7 has-text-grey-light">Showing album: <strong class="has-text-white">' + albumTitle + '</strong> (' + visibleCount + ' tracks)</span>',
+          '<button id="btn-clear-album-filter" class="button is-small is-dark custom-border" style="font-size:0.75rem;">Show All Tracks</button>'
+        ].join('');
+        banner.style.display = 'flex';
+        document.getElementById('btn-clear-album-filter').addEventListener('click', () => filterSongsByAlbum(null));
+      } else if (banner) {
+        banner.style.display = 'none';
+      }
+    }
 
     if (albumGrid && albumsList.length > 0) {
       albumGrid.innerHTML = '';
-      albumsList.forEach(album => {
+      albumsList.forEach((album, aIdx) => {
         const col = document.createElement('div');
         col.className = albumsList.length === 1 ? 'column is-12' : 'column is-half-tablet is-one-third-desktop';
+        const albId = album.id || (aIdx + 1);
         col.innerHTML = [
-          '<div class="box is-flex is-align-items-center has-background-black-bis custom-border album-box-card h-100" style="gap: 16px;">',
+          '<div class="box is-flex is-align-items-center has-background-black-bis custom-border album-box-card h-100" data-album-id="' + albId + '" title="Click to view album tracks" style="gap: 16px;">',
           '  <figure class="image is-96x96 m-0" style="flex-shrink: 0;">',
           '    <img',
           '      src="' + (album.cover || album.cover_url || 'assets/images/album-cover.jpg') + '"',
@@ -40,6 +92,18 @@ loadSiteData('band-data.json')
           '  </div>',
           '</div>'
         ].filter(Boolean).join('\n');
+
+        const card = col.querySelector('.album-box-card');
+        card.addEventListener('click', () => {
+          if (currentSelectedAlbumId === Number(albId)) {
+            filterSongsByAlbum(null);
+          } else {
+            filterSongsByAlbum(Number(albId));
+            const songListEl = document.getElementById('song-list');
+            if (songListEl) songListEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
         albumGrid.appendChild(col);
       });
     } else if (data.album) {

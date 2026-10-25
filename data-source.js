@@ -105,6 +105,10 @@
               return ls && ls.title && ls.title.trim().toLowerCase() === String(s.title).trim().toLowerCase();
             }) || localSongs[index];
             return {
+              id: s.id || (index + 1),
+              album_id: (s.album_id !== undefined && s.album_id !== null && s.album_id !== '')
+                ? Number(s.album_id)
+                : ((localMatch && localMatch.album_id) || 1),
               title: text(s.title),
               duration: text(s.duration),
               file: text(s.file_url),

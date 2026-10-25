@@ -17,7 +17,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Sela Hafoka-Hauser",
-      "lyrics": "I wear this shadow like a second skin\nA quiet armor for the storm within\nBehind the mask nobody sees the scars\nWe hide the fire beneath the dying stars\n\nCan you hear the voice calling through the night?\nWe strip the illusion and we face the light."
+      "lyrics": "I wear this shadow like a second skin\nA quiet armor for the storm within\nBehind the mask nobody sees the scars\nWe hide the fire beneath the dying stars\n\nCan you hear the voice calling through the night?\nWe strip the illusion and we face the light.",
+      "album_id": 1
     },
     {
       "title": "An Eerie Feeling (feat. Luisa Restrepo)",
@@ -26,7 +27,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Luisa Restrepo",
-      "lyrics": "Static in the air, a whisper on the wire\nA cold premonition walking through the fire\nAn eerie feeling creeping down the hall\nWaiting for the heavy rain to fall."
+      "lyrics": "Static in the air, a whisper on the wire\nA cold premonition walking through the fire\nAn eerie feeling creeping down the hall\nWaiting for the heavy rain to fall.",
+      "album_id": 1
     },
     {
       "title": "This Is What It Feels Like (feat. Maria Duque)",
@@ -35,7 +37,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Maria Duque",
-      "lyrics": "Underneath the neon, running out of time\nSearching for an answer on the borderline\nThis is what it feels like when the walls cave in\nThis is where the story and the truth begin."
+      "lyrics": "Underneath the neon, running out of time\nSearching for an answer on the borderline\nThis is what it feels like when the walls cave in\nThis is where the story and the truth begin.",
+      "album_id": 1
     },
     {
       "title": "Tempting Fate (feat. Sela Hafoka-Hauser)",
@@ -44,7 +47,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Sela Hafoka-Hauser",
-      "lyrics": "Playing with the thunder, dancing on the edge\nCounting every promise broken on the ledge\nTempting fate until the silence breaks in two\nThere is nothing left to lose with you."
+      "lyrics": "Playing with the thunder, dancing on the edge\nCounting every promise broken on the ledge\nTempting fate until the silence breaks in two\nThere is nothing left to lose with you.",
+      "album_id": 1
     },
     {
       "title": "Angel (feat. Hege)",
@@ -53,7 +57,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Hege",
-      "lyrics": "Fallen from the canopy, adrift inside the gray\nSearching for the pieces that were washed away\nAngel in the darkness, lift me from the ground\nWhere no other sanctuary can be found."
+      "lyrics": "Fallen from the canopy, adrift inside the gray\nSearching for the pieces that were washed away\nAngel in the darkness, lift me from the ground\nWhere no other sanctuary can be found.",
+      "album_id": 1
     },
     {
       "title": "Show Me (feat. Sela Hafoka-Hauser)",
@@ -62,7 +67,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Sela Hafoka-Hauser",
-      "lyrics": "Show me what remains when the flood recedes\nShow me every wound and the heart that bleeds\nNo more games or promises made in vain\nWash it all away inside the pouring rain."
+      "lyrics": "Show me what remains when the flood recedes\nShow me every wound and the heart that bleeds\nNo more games or promises made in vain\nWash it all away inside the pouring rain.",
+      "album_id": 1
     },
     {
       "title": "What Lies Beneath (feat. Martina Questa)",
@@ -71,7 +77,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Martina Questa",
-      "lyrics": "Surface looks so calm, but rivers run so deep\nSecrets that the twilight promises to keep\nWhat lies beneath the silence and the stone\nIs a restless spirit waiting to be known."
+      "lyrics": "Surface looks so calm, but rivers run so deep\nSecrets that the twilight promises to keep\nWhat lies beneath the silence and the stone\nIs a restless spirit waiting to be known.",
+      "album_id": 1
     },
     {
       "title": "Impulse (feat. Chiara)",
@@ -80,7 +87,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Chiara",
-      "lyrics": "A spark in the chamber, sudden surge of heat\nA heavy heart beating to an untamed beat\nImpulse driving forward through the pouring night\nUntil we meet the blinding morning light."
+      "lyrics": "A spark in the chamber, sudden surge of heat\nA heavy heart beating to an untamed beat\nImpulse driving forward through the pouring night\nUntil we meet the blinding morning light.",
+      "album_id": 1
     },
     {
       "title": "Not The Same (feat. Sela Hafoka-Hauser)",
@@ -89,7 +97,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Sela Hafoka-Hauser",
-      "lyrics": "Look into the mirror, shadows in the frame\nEverything has altered, we are not the same\nThe fire that consumed us left a quiet space\nNow we rebuild inside a different place."
+      "lyrics": "Look into the mirror, shadows in the frame\nEverything has altered, we are not the same\nThe fire that consumed us left a quiet space\nNow we rebuild inside a different place.",
+      "album_id": 1
     },
     {
       "title": "Torn (feat. Maria Duque)",
@@ -98,7 +107,8 @@
       "artwork": "assets/images/album-cover.jpg",
       "composers": "Ed Silva",
       "collaborators": "Maria Duque",
-      "lyrics": "Torn at the seams, pulled in two directions\nEchoes of the past and bittersweet reflections\nReclaim the ground and let the engines roar\nWe are not defeated anymore."
+      "lyrics": "Torn at the seams, pulled in two directions\nEchoes of the past and bittersweet reflections\nReclaim the ground and let the engines roar\nWe are not defeated anymore.",
+      "album_id": 1
     }
   ],
   "photos": [
@@ -112,7 +122,8 @@
       "title": "A Collection of Singles",
       "subtitle": "27 songs",
       "year": "2024",
-      "cover": "assets/images/album-cover.jpg"
+      "cover": "assets/images/album-cover.jpg",
+      "id": 1
     }
   ]
 }

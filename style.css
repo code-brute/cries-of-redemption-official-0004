@@ -507,3 +507,12 @@ body {
   transform: translateY(-2px);
   border-color: #333 !important;
 }
+
+.album-box-card {
+  cursor: pointer;
+}
+
+.album-box-card.is-active-album {
+  border-color: #f14668 !important;
+  box-shadow: 0 0 15px rgba(241, 70, 104, 0.25);
+}
