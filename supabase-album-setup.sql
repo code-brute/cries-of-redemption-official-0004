@@ -19,3 +19,4 @@ WHERE album_id IS NULL;
 
 -- 3. Create index for fast tracklist lookups by album
 CREATE INDEX IF NOT EXISTS idx_songs_album_id ON public.songs(album_id);
+
